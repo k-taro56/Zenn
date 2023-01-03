@@ -16,12 +16,6 @@ Visual Studio の新規 .NET MAUI App プロジェクトテンプレートを変
 The program '[00000] MauiApp1.exe' has exited with code 2147942405 (0x80070005).
 ```
 
-`Platforms\Windows\App.xaml`を開くと以下のエラーが出ました。（ファイルを開かないとエラーは出力されません。）
-
-```
-The type 'maui:MauiWinUIApplication' was not found. Verify that you are not missing an assembly reference and that all referenced assemblies have been built.
-```
-
 MAUI Blazor の新規プロジェクトでも同じ症状です。
 
 # 解決策
