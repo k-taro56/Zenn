@@ -25,7 +25,7 @@ public FileStream (string path, FileMode mode, FileAccess access, FileShare shar
 
 ちょっと呼び出しが長くなって嫌ですね。`useAsync` を切り替えられるだけのオーバーロードが欲しいですね。
 
-というわけで自分で書くとこんな感じになります。`useAync` のところ以外はデフォルトのコンストラクターと同じように動作します。
+というわけで自分で書くとこんな感じになります。`useAsync` のところ以外はデフォルトのコンストラクターと同じように動作します。
 
 ```cs
 static FileStream FileStreamNewHelper(string path, FileMode mode, bool useAsync)
