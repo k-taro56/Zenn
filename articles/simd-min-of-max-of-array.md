@@ -2,7 +2,7 @@
 title: "[C 言語] SIMD 入門：配列内の最小値と最大値"
 emoji: "🐡"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["C", "simd", "avx"]
+topics: ["c", "simd", "avx"]
 published: true
 ---
 
@@ -149,6 +149,32 @@ __m256i vector = _mm256_loadu_si256((__m256i*)a);
 _mm256_storeu_si256((__m256i*)b, vector);
 // これで vector の各要素が何かわかる。
 // b[0]=1, b[1]=2, b[2]=3, b[3]=4, b[4]=5, b[5]=6, b[6]=7, b[7]=8
+```
+
+## _mm256_set1_epi32
+
+_mm256_set1_epi32 は指定した 1 つの int 型の値を 8 個コピーして __m256i 型のデータを作成します。
+
+```c
+int value = 1;
+int result[8];
+
+__m256i a256 = _mm256_set1_epi32(value);
+_mm256_storeu_si256((__m256i*)result, a256);
+// result[0]=1, result[1]=1, result[2]=1, result[3]=1, result[4]=1, result[5]=1, result[6]=1, result[7]=1
+```
+
+汎用命令で書くと以下のようになります。
+
+```c
+int value = 1;
+int a[8];
+
+for (int i = 0; i < 8; i++)
+{
+    a[i] = value;
+}
+// a[0]=1, a[1]=1, a[2]=1, a[3]=1, a[4]=1, a[5]=1, a[6]=1, a[7]=1
 ```
 
 ## _mm256_min_epi32
