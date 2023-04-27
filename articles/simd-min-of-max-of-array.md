@@ -48,7 +48,7 @@ int min_of(const int a[], int length)
 }
 
 // 配列 a の中から最大値を求める関数。
-int max_of(int a[], int length)
+int max_of(const int a[], int length)
 {
     int max_value = INT_MIN;
 
@@ -121,7 +121,7 @@ int min_of(const int a[], int length)
 }
 
 // 配列 a の中から最大値を求める関数。
-int max_of(int a[], int length)
+int max_of(const int a[], int length)
 {
     int i = 0;
 
