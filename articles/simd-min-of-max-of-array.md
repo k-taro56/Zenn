@@ -24,14 +24,56 @@ C 言語からは intrin.h ヘッダーファイルをインクルードする�
 
 # 配列内の最小値と最大値を求めるプログラム
 
-プログラムは以下のようになります。
+## 汎用命令を使用したプログラム
+
+まずは汎用命令を使用したプログラムを紹介します。
+
+```c
+#include <limits.h>
+
+// 配列 a の中から最小値を求める関数。
+int min_of(const int a[], int length)
+{
+    int min_value = INT_MAX;
+
+    for (int i = 0; i < length; i++)
+    {
+        if (a[i] < min_value)
+        {
+            min_value = a[i];
+        }
+    }
+
+    return min_value;
+}
+
+// 配列 a の中から最大値を求める関数。
+int max_of(int a[], int length)
+{
+    int max_value = INT_MIN;
+
+    for (int i = 0; i < length; i++)
+    {
+        if (a[i] > max_value)
+        {
+            max_value = a[i];
+        }
+    }
+
+    return max_value;
+}
+```
+
+## SIMD 命令を使用したプログラム
+
+次に SIMD 命令を使用したプログラムを紹介します。
+
 高速化を優先するのではなく、SIMD を使ってみることに重点を置いています。
 本格的に高速化したい場合はさらに工夫が必要です。
 
 なお、1 バイトは 8 ビット、int 型は 4 バイトとします。コンパイラーは MSVC を想定しています。
 
 ```c
-#include <stdio.h>
 #include <limits.h>
 #include <intrin.h>
 
@@ -238,6 +280,10 @@ for (int i = 0; i < 8; i++)
 }
 // result[0]=8, result[1]=7, result[2]=6, result[3]=5, result[4]=5, result[5]=6, result[6]=7, result[7]=8
 ```
+
+# ソースコード
+
+https://github.com/k-taro56/ZennSimdSample/tree/main/MinOfMaxOf
 
 # 参考になるサイト
 
