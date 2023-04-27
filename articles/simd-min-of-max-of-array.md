@@ -1,5 +1,5 @@
 ---
-title: "[C 言語] SIMD 入門：配列内の最小値と最大値"
+title: "C 言語 SIMD 入門：配列内の最小値と最大値"
 emoji: "🐡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["c", "simd", "avx"]
@@ -189,7 +189,7 @@ int b[8];
 __m256i vector = _mm256_loadu_si256((__m256i*)a);
 // vector の内容を配列 b に書き込む。
 _mm256_storeu_si256((__m256i*)b, vector);
-// これで vector の各要素が何かわかる。
+// これで配列 b に vector の各要素が格納され、その値を確認できる。
 // b[0]=1, b[1]=2, b[2]=3, b[3]=4, b[4]=5, b[5]=6, b[6]=7, b[7]=8
 ```
 
