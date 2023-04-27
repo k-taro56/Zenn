@@ -75,7 +75,7 @@ int max_of(const int a[], int length)
 
 ```c
 #include <limits.h>
-#include <intrin.h>
+#include <immintrin.h>
 
 // 配列 a の中から最小値を求める関数。
 int min_of(const int a[], int length)
