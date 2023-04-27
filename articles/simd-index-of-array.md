@@ -1,5 +1,5 @@
 ---
-title: "[C 言語] SIMD 入門：配列内の要素のインデックスを求める [線形探索]"
+title: "C 言語 SIMD 入門：配列内の要素のインデックスを求める [線形探索]"
 emoji: "🙌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["c", "simd", "avx"]
