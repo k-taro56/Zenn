@@ -56,7 +56,7 @@ int index_of(const int a[], int length, int key)
 ```c
 #include <intrin.h>
 
-// 32 ビット整数の 8 個の要素を持つベクトルの中から、最初に 0 以外の要素が見つかったインデックスを求める関数。
+// 32 ビット符号付整数の 8 個の要素を持つベクトルの中から、最初に負の要素が見つかったインデックスを求める関数。
 unsigned long find_first_non_zero_index_epi32(__m256i a)
 {
     unsigned long index;
@@ -286,18 +286,18 @@ for (int i = 0; i < 8; i++)
 _mm256_testz_si256 は 2 つの __m256i 型のデータをビット単位で論理積を計算して、すべてのビットが 0 になったかを返します。
 すべてのビットが 0 になった場合は 1、それ以外の場合は 0 を返します。
 
-2 つの __m256i 型が等しいかどうかを判定する場合に使用できます。
+__m256i 型のデータが 0 と等しいかどうかを判定する場合に使用できます。
 
 ```c
 int a[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-int b[8] = {1, 0, 3, 6, 5, 10, 15, 8};
+int b[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 __m256i a256 = _mm256_loadu_si256((__m256i*)a);
 __m256i b256 = _mm256_loadu_si256((__m256i*)b);
 
-int result = _mm256_testz_si256(a256, b256);
+int result = _mm256_testz_si256(a256, a256);
 // result=0
-result = _mm256_testz_si256(a256, a256);
+result = _mm256_testz_si256(b256, b256);
 // result=1
 ```
 
@@ -305,13 +305,13 @@ result = _mm256_testz_si256(a256, a256);
 
 ```c
 int a[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-int b[8] = {1, 0, 3, 6, 5, 10, 15, 8};
+int b[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 int result = 1;
 
 for (int i = 0; i < 8; i++)
 {
-    if ((a[i] & b[i]) != 0)
+    if ((a[i] & a[i]) != 0)
     {
         result = 0;
         break;
@@ -323,7 +323,7 @@ result = 1;
 
 for (int i = 0; i < 8; i++)
 {
-    if ((a[i] & a[i]) != 0)
+    if ((b[i] & b[i]) != 0)
     {
         result = 0;
         break;
