@@ -288,5 +288,5 @@ https://github.com/k-taro56/ZennSimdSample/tree/main/MinOfMaxOf
 # 参考になるサイト
 
 - [Intel Intrinsics Guide](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html) インテルの公式ドキュメントで、関数が一覧表になっていています。パフォーマンスに関する情報が記載されています。
-- [概要: インテル AVX 命令の組み込み関数](https://www.xlsoft.com/jp/products/intel/compilers/ccl/12/ug/hh_goto.htm#intref_cls/common/intref_avx_overview.htm) こちらもインテルの公式ドキュメントです。日本語ですがパフォーマンスについての情報はありません。
+- [インテル AVX2 命令の組み込み関数](https://jp.xlsoft.com/documents/intel/compiler/18/cpp_18_win_lin/index.htm#GUID-9E84F9C5-1711-4F59-8742-8F9DF283A472.html) こちらもインテルの公式ドキュメントです。日本語ですが、パフォーマンスについての情報はありません。
 - [AVX/AVX2/AVX512 アドベントカレンダー2021イントロダクション](https://qiita.com/fukushima1981/items/66bc7265f3b678903dba) 日本語で各関数を詳細に解説しています。とてもわかりやすいですが、一部の関数だけです。
