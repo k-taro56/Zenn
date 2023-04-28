@@ -58,7 +58,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 ## その他の操作
 
-## _mm256_movemask_ps
+### _mm256_movemask_ps
 
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
 
