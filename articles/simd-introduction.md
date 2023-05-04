@@ -30,10 +30,26 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [配列内の最小値と最大値](https://zenn.dev/k-taro56/articles/simd-min-of-max-of-array)
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 
 # 関数一覧
 
 今までに解説した関数の一覧です。
+どの記事でも解説は同じです。
+
+## 算術演算
+
+### _mm256_add_epi32
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+
+### _mm256_mullo_epi32
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+
+### _mm256_hadd_epi32
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 
 ## 比較操作
 
@@ -55,6 +71,13 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [配列内の最小値と最大値](https://zenn.dev/k-taro56/articles/simd-min-of-max-of-array)
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+
+## 挿入/抽出操作
+
+### _mm256_extract_epi32
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 
 ## その他の操作
 
@@ -67,11 +90,21 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の最小値と最大値](https://zenn.dev/k-taro56/articles/simd-min-of-max-of-array)
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
 
+### _mm256_setzero_si256
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+
 ## パックドテスト操作
 
 ### _mm256_testz_si256
 
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
+
+## 置換操作
+
+### _mm256_permute2x128_si256
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 
 ## ベクトルの型キャスト操作
 
