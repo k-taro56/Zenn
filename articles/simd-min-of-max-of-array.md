@@ -71,7 +71,7 @@ int max_of(const int a[], int length)
 高速化を優先するのではなく、SIMD を使ってみることに重点を置いています。
 本格的に高速化したい場合はさらに工夫が必要です。
 
-なお、1 バイトは 8 ビット、int 型は 4 バイトとします。コンパイラーは MSVC を想定しています。
+なお、1 バイトは 8 ビット、`int` 型は 4 バイトとします。コンパイラーは MSVC を想定しています。
 
 ```c
 #include <limits.h>
@@ -170,17 +170,17 @@ int max_of(const int a[], int length)
 
 ## __m256i
 
-初めに関数ではありませんが、__m256i について説明します。
-__m256i は大きさが 256 ビットで、複数の整数を格納するための型です。
-__m256i の中に入っている整数型は決まっておらず、どの関数を使用するかによって中身（要素）の整数型が決まります。
-要素が int 型であれば 8 個格納することができます。
+初めに関数ではありませんが、`__m256i` について説明します。
+`__m256i` は大きさが 256 ビットで、複数の整数を格納するための型です。
+`__m256i` の中に入っている整数型は決まっておらず、どの関数を使用するかによって中身（要素）の整数型が決まります。
+要素が `int` 型であれば 8 個格納することができます。
 
 ## _mm256_loadu_si256 _mm256_storeu_si256
 
-_mm256_loadu_si256 と _mm256_storeu_si256 は __m256i 型のデータをメモリーに読み込む・書き込むための関数です。
+`_mm256_loadu_si256` と `_mm256_storeu_si256` は `__m256i` 型のデータをメモリーに読み込む・書き込むための関数です。
 
-__mm256i の各要素を直接調べることはできません。
-そこでこれらの関数を使用して、__m256i 型のデータを配列に変換して各要素がどうなっているか確認します。
+`__mm256i` の各要素を直接調べることはできません。
+そこでこれらの関数を使用して、`__m256i` 型のデータを配列に変換して各要素がどうなっているか確認します。
 
 ```c
 int a[8] = {1, 2, 3, 4, 5, 6, 7, 8};
@@ -195,7 +195,7 @@ _mm256_storeu_si256((__m256i*)b, vector);
 
 ## _mm256_set1_epi32
 
-_mm256_set1_epi32 は指定した 1 つの int 型の値を 8 個コピーして __m256i 型のデータを作成します。
+`_mm256_set1_epi32` は指定した 1 つの `int` 型の値を 8 個コピーして `__m256i` 型のデータを作成します。
 
 ```c
 int value = 1;
@@ -203,7 +203,8 @@ int result[8];
 
 __m256i a256 = _mm256_set1_epi32(value);
 _mm256_storeu_si256((__m256i*)result, a256);
-// result[0]=1, result[1]=1, result[2]=1, result[3]=1, result[4]=1, result[5]=1, result[6]=1, result[7]=1
+// result[0]=1, result[1]=1, result[2]=1, result[3]=1,
+// result[4]=1, result[5]=1, result[6]=1, result[7]=1
 ```
 
 汎用命令で書くと以下のようになります。
@@ -221,8 +222,8 @@ for (int i = 0; i < 8; i++)
 
 ## _mm256_min_epi32
 
-_mm256_min_epi32 は 2 つの __m256i 型のデータの各要素ごとに最小値を求めます。
-__m256i 型の要素は int 型として扱います。
+`_mm256_min_epi32` は 2 つの `__m256i` 型のデータの各要素ごとに最小値を求めます。
+`__m256i` 型の要素は `int` 型として扱います。
 
 ```c
 int a[8] = {1, 2, 3, 4, 5, 6, 7, 8};
@@ -233,7 +234,8 @@ __m256i a256 = _mm256_loadu_si256((__m256i*)a);
 __m256i b256 = _mm256_loadu_si256((__m256i*)b);
 __m256i result256 = _mm256_min_epi32(a256, b256);
 _mm256_storeu_si256((__m256i*)result, result256);
-// result[0]=1, result[1]=2, result[2]=3, result[3]=4, result[4]=4, result[5]=3, result[6]=2, result[7]=1
+// result[0]=1, result[1]=2, result[2]=3, result[3]=4,
+// result[4]=4, result[5]=3, result[6]=2, result[7]=1
 ```
 
 汎用命令で書くと以下のようになります。
@@ -247,13 +249,14 @@ for (int i = 0; i < 8; i++)
 {
     result[i] = a[i] < b[i] ? a[i] : b[i];
 }
-// result[0]=1, result[1]=2, result[2]=3, result[3]=4, result[4]=4, result[5]=3, result[6]=2, result[7]=1
+// result[0]=1, result[1]=2, result[2]=3, result[3]=4,
+// result[4]=4, result[5]=3, result[6]=2, result[7]=1
 ```
 
 ## _mm256_max_epi32
 
-_mm256_max_epi32 は 2 つの __m256i 型のデータの各要素ごとに最大値を求めます。
-__m256i 型の要素は int 型として扱います。
+`_mm256_max_epi32` は 2 つの `__m256i` 型のデータの各要素ごとに最大値を求めます。
+`__m256i` 型の要素は `int` 型として扱います。
 
 ```c
 int a[8] = {1, 2, 3, 4, 5, 6, 7, 8};
@@ -264,7 +267,8 @@ __m256i a256 = _mm256_loadu_si256((__m256i*)a);
 __m256i b256 = _mm256_loadu_si256((__m256i*)b);
 __m256i result256 = _mm256_max_epi32(a256, b256);
 _mm256_storeu_si256((__m256i*)result, result256);
-// result[0]=8, result[1]=7, result[2]=6, result[3]=5, result[4]=5, result[5]=6, result[6]=7, result[7]=8
+// result[0]=8, result[1]=7, result[2]=6, result[3]=5,
+// result[4]=5, result[5]=6, result[6]=7, result[7]=8
 ```
 
 汎用命令で書くと以下のようになります。
@@ -278,12 +282,17 @@ for (int i = 0; i < 8; i++)
 {
     result[i] = a[i] > b[i] ? a[i] : b[i];
 }
-// result[0]=8, result[1]=7, result[2]=6, result[3]=5, result[4]=5, result[5]=6, result[6]=7, result[7]=8
+// result[0]=8, result[1]=7, result[2]=6, result[3]=5,
+// result[4]=5, result[5]=6, result[6]=7, result[7]=8
 ```
 
 # ソースコード
 
 https://github.com/k-taro56/ZennSimdSample/tree/main/MinOfMaxOf
+
+# SIMD 解説記事一覧
+
+https://zenn.dev/k_taro56/articles/simd-introduction
 
 # 参考になるサイト
 
