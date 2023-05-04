@@ -32,6 +32,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 # 関数一覧
 
@@ -44,15 +45,18 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ### _mm256_hadd_epi32
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ### _mm256_mullo_epi32
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ## 比較操作
 
@@ -76,6 +80,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ## 挿入/抽出操作
 
@@ -83,6 +88,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ## その他の操作
 
@@ -99,6 +105,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ## パックドテスト操作
 
@@ -112,6 +119,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+- [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 
 ## ベクトルの型キャスト操作
 
