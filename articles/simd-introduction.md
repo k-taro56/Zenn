@@ -31,6 +31,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の最小値と最大値](https://zenn.dev/k-taro56/articles/simd-min-of-max-of-array)
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 
 # 関数一覧
 
@@ -42,12 +43,14 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 ### _mm256_add_epi32
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
-
-### _mm256_mullo_epi32
-
-- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 
 ### _mm256_hadd_epi32
+
+- [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
+
+### _mm256_mullo_epi32
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 
@@ -72,12 +75,14 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の最小値と最大値](https://zenn.dev/k-taro56/articles/simd-min-of-max-of-array)
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 
 ## 挿入/抽出操作
 
 ### _mm256_extract_epi32
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 
 ## その他の操作
 
@@ -93,6 +98,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 ### _mm256_setzero_si256
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 
 ## パックドテスト操作
 
@@ -105,6 +111,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 ### _mm256_permute2x128_si256
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
+- [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 
 ## ベクトルの型キャスト操作
 
