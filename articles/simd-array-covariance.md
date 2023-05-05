@@ -22,14 +22,14 @@ SSE では 128 ビットのデータを、AVX（AVX2）では 256 ビットの�
 今回は Haswell 世代以降の CPU で使用できる AVX2 を使用します。
 C 言語からは immintrin.h ヘッダーファイルをインクルードすることで、SIMD 命令と一対一に結び付いた関数を使用することができます。
 
-# 共分散を計算する
+# 共分散を求める
 
 いずれも定義通りではなく、共分散公式を使用しています。
 
-# 汎用命令を使用したプログラム
+## 汎用命令を使用したプログラム
 
 ```c
-// 配列 a と b の共分散を計算する関数。
+// 配列 a と b の共分散を求める関数。
 double covariance(const int a[], const int b[], int length)
 {
     int multiply_add = 0;
@@ -51,7 +51,7 @@ double covariance(const int a[], const int b[], int length)
 }
 ```
 
-# SIMD 命令を使用したプログラム
+## SIMD 命令を使用したプログラム
 
 次に SIMD 命令を使用したプログラムを紹介します。
 
@@ -63,7 +63,7 @@ double covariance(const int a[], const int b[], int length)
 ```c
 #include <immintrin.h>
 
-// 配列 a と b の共分散を計算する関数。
+// 配列 a と b の共分散を求める関数。
 double covariance(const int a[], const int b[], int length)
 {
     int i = 0;
