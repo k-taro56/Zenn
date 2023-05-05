@@ -106,6 +106,7 @@ double covariance(const int a[], const int b[], int length)
     int sum_b = _mm256_extract_epi32(sum_b256_hadd, 0);
 
     // 残りの要素を処理。
+    // ここは汎用命令。
     for (; i < length; i++)
     {
         multiply_add += a[i] * b[i];
