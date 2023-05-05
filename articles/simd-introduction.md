@@ -34,6 +34,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 # 関数一覧
 
@@ -48,6 +49,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ### _mm256_hadd_epi32
 
@@ -55,12 +57,14 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ### _mm256_mullo_epi32
 
 - [2 つのベクトルの内積を計算する](https://zenn.dev/k-taro56/articles/simd-vector-dot-product)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ## 比較操作
 
@@ -86,6 +90,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ## 挿入/抽出操作
 
@@ -95,6 +100,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ## その他の操作
 
@@ -113,6 +119,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ## パックドテスト操作
 
@@ -128,6 +135,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列内の全要素の和を求める](https://zenn.dev/k-taro56/articles/simd-array-summation)
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
+- [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
 
 ## ベクトルの型キャスト操作
 
@@ -140,4 +148,3 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [Intel Intrinsics Guide](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html) インテルの公式ドキュメントで、関数が一覧表になっていています。パフォーマンスに関する情報が記載されています。
 - [インテル AVX2 命令の組み込み関数](https://jp.xlsoft.com/documents/intel/compiler/18/cpp_18_win_lin/index.htm#GUID-9E84F9C5-1711-4F59-8742-8F9DF283A472.html) こちらもインテルの公式ドキュメントです。日本語ですが、パフォーマンスについての情報はありません。
 - [AVX/AVX2/AVX512 アドベントカレンダー2021イントロダクション](https://qiita.com/fukushima1981/items/66bc7265f3b678903dba) 日本語で各関数を詳細に解説しています。とてもわかりやすいですが、一部の関数だけです。
-
