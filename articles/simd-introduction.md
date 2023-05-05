@@ -35,6 +35,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
 - [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
+- [行列のスカラー倍を計算する](https://zenn.dev/k_taro56/articles/simd-scalar-multiplication)
 
 # 関数一覧
 
@@ -65,6 +66,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
 - [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
+- [行列のスカラー倍を計算する](https://zenn.dev/k_taro56/articles/simd-scalar-multiplication)
 
 ## 比較操作
 
@@ -91,6 +93,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 - [配列の分散を求める](https://zenn.dev/k-taro56/articles/simd-array-dispersion)
 - [2 つの配列の共分散を求める](https://zenn.dev/k-taro56/articles/simd-array-covariance)
 - [2 つの配列の相関係数を求める](https://zenn.dev/k_taro56/articles/simd-array-correlation-coefficient)
+- [行列のスカラー倍を計算する](https://zenn.dev/k_taro56/articles/simd-scalar-multiplication)
 
 ## 挿入/抽出操作
 
@@ -112,6 +115,7 @@ MSVC では intrin.h ヘッダーファイルをインクルードすること�
 
 - [配列内の最小値と最大値](https://zenn.dev/k-taro56/articles/simd-min-of-max-of-array)
 - [配列内の要素のインデックスを求める](https://zenn.dev/k-taro56/articles/simd-index-of-array)
+- [行列のスカラー倍を計算する](https://zenn.dev/k_taro56/articles/simd-scalar-multiplication)
 
 ### _mm256_setzero_si256
 
