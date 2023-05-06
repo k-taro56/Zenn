@@ -16,6 +16,8 @@ C# では `Vector256<T>` を用いることで簡単に SIMD を使うことが�
 
 # 記事一覧
 
+- [配列の総和](https://zenn.dev/k-taro56/articles/vetcorized-csharp-array-summation)
+
 # C 言語版
 
 C 言語版では、SIMD 命令と一対一に結び付いた SIMD 関数を使用しています。

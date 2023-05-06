@@ -9,6 +9,7 @@ published: true
 # はじめに
 
 この記事では C 言語で SIMD の一つである x64（amd64、x86-64）の AVX2 を使用して、配列内の全要素の和を求める方法を紹介します。
+AVX2 を使用することで従来の方法に比べて計算速度が向上し、効率的に求めることができます。
 
 # SIMD とは
 
@@ -285,7 +286,16 @@ int result = a[value];
 
 # ソースコード
 
+簡単な関数の使用方法も含めて、ソースコードを以下に置いています。
+
 https://github.com/k-taro56/ZennSimdSample/tree/main/ArraySummation
+
+# C# 版
+
+この記事を C# で書き直したもので、がちがちに最適化しています。
+またベンチマーク結果もあります。
+
+https://zenn.dev/k_taro56/articles/2021-10-16-simd-introduction-csharp
 
 # SIMD 解説記事一覧
 
