@@ -11,6 +11,10 @@ published: true
 この記事では AVX2 を使用したプログラミングを解説した記事の一覧を紹介します。
 言語はすべて C 言語です。
 
+C# で並列化したい場合はこちらの記事から参照してください。
+
+https://zenn.dev/k_taro56/articles/vetcorized-csharp-introduction
+
 # SIMD とは
 
 SIMD は Single Instruction Multiple Data の略で、一度の命令で複数のデータを処理することができます。
@@ -20,7 +24,7 @@ SIMD は CPU によって命令セットが異なります。
 x86 では SSE、AVX、Arm では NEON などがあります。
 SSE では 128 ビットのデータを、AVX（AVX2）では 256 ビットのデータを 1 つの命令で処理できます。
 
-このシリーズの記事では Haswell 世代以降の CPU で使用できる AVX2 を使用しています。
+このシリーズの記事では Haswell 世代（2013 年発売）以降の CPU で使用できる AVX2 を使用しています。
 C言語からは immintrin.h ヘッダーファイルをインクルードすることで、SIMD 命令と一対一に結び付いた関数を使用することができます。
 MSVC では intrin.h ヘッダーファイルをインクルードすることで SSE などにも対応できますが、MSVC でしか使用できません。
 
