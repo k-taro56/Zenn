@@ -52,20 +52,21 @@ using System.Runtime.Intrinsics;
 public static int VectorizedSum(ReadOnlySpan<int> span)
 {
     // eax
+    int sum = 0;
+
+    // edx
     nuint index = 0;
 
-    // edx = span.Length
-    // rdx = (nuint)span.Length
+    // r8d = span.Length
+    // r8
     nuint length = (nuint)span.Length;
 
-    // r8d
-    int sum = 0;
     // rcx
     ref int reference = ref MemoryMarshal.GetReference(span);
 
     if (Vector256.IsHardwareAccelerated && (nuint)Vector256<int>.Count <= length)
     {
-        // r8
+        // rax
         nuint oneVectorAwayFromLast = length - (nuint)Vector256<int>.Count;
         // ymm0
         Vector256<int> sum256 = Vector256<int>.Zero;
@@ -107,71 +108,69 @@ public static int VectorizedSum(ReadOnlySpan<int> span)
 
 ```nasm
 L0000: vzeroupper
-; nuint index = 0;
-L0003: xor eax, eax
-; int length = span.Length;
-L0005: mov edx, [rcx+8]
-; nuint length = (nuint)length;
-L0008: movsxd rdx, edx
 ; int sum = 0;
-L000b: xor r8d, r8d
+L0003: xor eax, eax
+; nuint index = 0;
+L0005: xor edx, edx
+; int length = span.Length;
+L0007: mov r8d, [rcx+8]
+; nuint length = (nuint)length;
+L000b: movsxd r8, r8d
 ; ref int reference = ref MemoryMarshal.GetReference(span);
 L000e: mov rcx, [rcx]
 ; if (Vector256.IsHardwareAccelerated && (nuint)Vector256<int>.Count <= length)
-L0011: cmp rdx, 8
-L0015: jb L009c
+L0011: cmp r8, 8
+L0015: jb L009b
 ; nuint oneVectorAwayFromLast = length - (nuint)Vector256<int>.Count;
-L001b: lea r8, [rdx-8]
+L001b: lea rax, [r8-8]
 ; Vector256<int> sum256 = Vector256<int>.Zero;
 L001f: vxorps ymm0, ymm0, ymm0
 ; do
 ; Vector256<int> vector = Vector256.LoadUnsafe(ref reference, index);
 ; sum256 += vector;
-L0023: vpaddd ymm0, ymm0, [rcx+rax*4]
+L0023: vpaddd ymm0, ymm0, [rcx+rdx*4]
 ; index += (nuint)Vector256<int>.Count;
-L0028: add rax, 8
+L0028: add rdx, 8
 ; while (index <= oneVectorAwayFromLast);
-L002c: cmp rax, r8
+L002c: cmp rdx, rax
 L002f: jbe short L0023
+L0031: vmovaps xmm1, xmm0
 ; スカラー値に変換。
 ; 組み込み関数を使うよりも高速。
-L0031: vmovaps xmm1, xmm0
-L0035: vmovd r8d, xmm1
-L003a: vmovaps xmm1, xmm0
-L003e: vpextrd r9d, xmm1, 1
-L0044: add r8d, r9d
-L0047: vmovaps xmm1, xmm0
-L004b: vpextrd r9d, xmm1, 2
-L0051: add r8d, r9d
-L0054: vmovaps xmm1, xmm0
-L0058: vpextrd r9d, xmm1, 3
-L005e: add r8d, r9d
-L0061: vextractf128 xmm1, ymm0, 1
-L0067: vmovd r9d, xmm1
-L006c: add r8d, r9d
-L006f: vextractf128 xmm1, ymm0, 1
-L0075: vpextrd r9d, xmm1, 1
-L007b: add r8d, r9d
-L007e: vextractf128 xmm1, ymm0, 1
-L0084: vpextrd r9d, xmm1, 2
-L008a: add r8d, r9d
-L008d: vextractf128 xmm0, ymm0, 1
-L0093: vpextrd r9d, xmm0, 3
-L0099: add r8d, r9d
+L0035: vmovd eax, xmm1
+L0039: vmovaps xmm1, xmm0
+L003d: vpextrd r9d, xmm1, 1
+L0043: add eax, r9d
+L0046: vmovaps xmm1, xmm0
+L004a: vpextrd r9d, xmm1, 2
+L0050: add eax, r9d
+L0053: vmovaps xmm1, xmm0
+L0057: vpextrd r9d, xmm1, 3
+L005d: add eax, r9d
+L0060: vextractf128 xmm1, ymm0, 1
+L0066: vmovd r9d, xmm1
+L006b: add eax, r9d
+L006e: vextractf128 xmm1, ymm0, 1
+L0074: vpextrd r9d, xmm1, 1
+L007a: add eax, r9d
+L007d: vextractf128 xmm1, ymm0, 1
+L0083: vpextrd r9d, xmm1, 2
+L0089: add eax, r9d
+L008c: vextractf128 xmm0, ymm0, 1
+L0092: vpextrd r9d, xmm0, 3
+L0098: add eax, r9d
 ; do ステートメントに展開されている。
 ; index < length;
-L009c: cmp rax, rdx
-L009f: jae short L00ad
+L009b: cmp rdx, r8
+L009e: jae short L00ab
 ; sum += Unsafe.Add(ref reference, index);
-L00a1: add r8d, [rcx+rax*4]
+L00a0: add eax, [rcx+rdx*4]
 ; index++;
-L00a5: inc rax
-; index < length;
-L00a8: cmp rax, rdx
-L00ab: jb short L00a1
-L00ad: mov eax, r8d
-L00b0: vzeroupper
-L00b3: ret
+L00a3: inc rdx
+L00a6: cmp rdx, r8
+L00a9: jb short L00a0
+L00ab: vzeroupper
+L00ae: ret
 ```
 
 # ベンチマーク結果
@@ -179,24 +178,24 @@ L00b3: ret
 [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) を使用してベンチマークを行いました。
 
 `Vector256<int>` を使用した方がすべての長さで高速で、要素数が増えるほど差が開きます。
-最大 10 倍以上高速化することができました。
+最大 9 倍以上高速化することができました。
 
 |     Method | Length |         Mean |     Error |    StdDev | Ratio |
 |----------- |------- |-------------:|----------:|----------:|------:|
-|    General |      1 |     1.739 ns | 0.0079 ns | 0.0074 ns |  1.00 |
-| Vectorized |      1 |     1.704 ns | 0.0050 ns | 0.0042 ns |  0.98 |
+|    General |      1 |     1.683 ns | 0.0201 ns | 0.0178 ns |  1.00 |
+| Vectorized |      1 |     1.648 ns | 0.0059 ns | 0.0055 ns |  0.98 |
 |            |        |              |           |           |       |
-|    General |     10 |     4.030 ns | 0.0149 ns | 0.0139 ns |  1.00 |
-| Vectorized |     10 |     3.825 ns | 0.0228 ns | 0.0202 ns |  0.95 |
+|    General |     10 |     4.236 ns | 0.0203 ns | 0.0190 ns |  1.00 |
+| Vectorized |     10 |     3.756 ns | 0.0139 ns | 0.0130 ns |  0.89 |
 |            |        |              |           |           |       |
-|    General |    100 |    43.876 ns | 0.0805 ns | 0.0714 ns |  1.00 |
-| Vectorized |    100 |     7.150 ns | 0.0405 ns | 0.0317 ns |  0.16 |
+|    General |    100 |    43.808 ns | 0.0279 ns | 0.0261 ns |  1.00 |
+| Vectorized |    100 |     6.958 ns | 0.0161 ns | 0.0151 ns |  0.16 |
 |            |        |              |           |           |       |
-|    General |   1000 |   350.615 ns | 2.0672 ns | 1.9337 ns |  1.00 |
-| Vectorized |   1000 |    41.376 ns | 0.0392 ns | 0.0367 ns |  0.12 |
+|    General |   1000 |   349.722 ns | 1.3974 ns | 1.3071 ns |  1.00 |
+| Vectorized |   1000 |    41.432 ns | 0.0199 ns | 0.0166 ns |  0.12 |
 |            |        |              |           |           |       |
-|    General |  10000 | 3,519.136 ns | 1.7540 ns | 1.6407 ns |  1.00 |
-| Vectorized |  10000 |   337.213 ns | 0.7954 ns | 0.6642 ns |  0.10 |
+|    General |  10000 | 3,516.904 ns | 1.1052 ns | 0.9797 ns |  1.00 |
+| Vectorized |  10000 |   390.960 ns | 0.4707 ns | 0.3675 ns |  0.11 |
 
 # C 言語版
 
@@ -209,6 +208,55 @@ https://zenn.dev/k-taro56/articles/simd-array-summation
 その他の C# 並列化に関する記事の一覧です。
 
 https://zenn.dev/k_taro56/articles/simd-introduction
+
+# おまけ
+
+アセンブリーコードの `L0023` のアドレスオフセットの計算で、`int` 型のサイズがかけられています。
+初めから `byte` 型でオフセットを持っていればこのかけ算を省略できます。
+そのように書き換えたのが以下のコードです。
+
+```csharp
+public static int VectorizedByteOffset(ReadOnlySpan<int> span)
+{
+    int sum = 0;
+    nuint byteOffset = 0;
+    nuint byteLength = (nuint)span.Length * sizeof(int);
+    ref int intReference = ref MemoryMarshal.GetReference(span);
+    ref byte byteReference = ref Unsafe.As<int, byte>(ref intReference);
+
+    if (Vector256.IsHardwareAccelerated && (nuint)Vector256<byte>.Count <= byteLength)
+    {
+        nuint awayFromLastElement = byteLength - (nuint)Vector256<byte>.Count;
+        Vector256<int> sum256 = Vector256<int>.Zero;
+
+        do
+        {
+            Vector256<byte> vector = Vector256.LoadUnsafe(ref byteReference, byteOffset);
+            sum256 += Unsafe.As<Vector256<byte>, Vector256<int>>(ref vector);
+            byteOffset += (nuint)Vector256<byte>.Count;
+        } while (byteOffset <= awayFromLastElement);
+
+        sum = sum256[0];
+        sum += sum256[1];
+        sum += sum256[2];
+        sum += sum256[3];
+        sum += sum256[4];
+        sum += sum256[5];
+        sum += sum256[6];
+        sum += sum256[7];
+    }
+
+    for (; byteOffset < byteLength; byteOffset += sizeof(int))
+    {
+        sum += Unsafe.AddByteOffset(ref intReference, byteOffset);
+    }
+
+    return sum;
+}
+```
+
+ただ、ベンチマークをとったところ特に結果は変わりませんでした。
+机上では速くなるはずですが、実際にはそうならず、コードも読みにくくなっているのでおまけとしました。
 
 # ソースコード
 
