@@ -118,7 +118,7 @@ UnityでWebGL向けの2Dシューティングゲームを作る際には、い�
 
 > テーマは宇宙がいいです。その他はシューティングゲーム風にあなたがいい感じにしてほしいです。
 
-![](/images/unity-shooting-game-by-chat-gpt//image.png)
+![](/images/unity-shooting-game-by-chat-gpt/image.png)
 
 画像が生成されました。この宇宙をテーマにした背景は、2Dシューティングゲームに適しているはずです。色鮮やかな星雲、きらめく星、遠くの惑星が特徴的です。色彩は青、紫、ピンクの様々な色合いで、鮮やかで魅力的な宇宙の設定を表現しています。
 
@@ -135,7 +135,7 @@ UnityでWebGL向けの2Dシューティングゲームを作る際には、い�
 
 > 真上から見上げた宇宙船がいいです。その他はシューティングゲーム風にあなたがいい感じにしてほしいです。
 
-![](/images/unity-shooting-game-by-chat-gpt//image-1.png)
+![](/images/unity-shooting-game-by-chat-gpt/image-1.png)
 
 宇宙船のスプライト画像が生成されました。この画像は2Dシューティングゲームに合うように設計された、真上から見た宇宙船を表しています。未来的でスリムなデザインが特徴で、色彩は金属的でビビッドな青や緑のヒントが加えられています。速さと敏捷性を感じさせるデザインで、高速の宇宙戦闘に適していることが伺えます。
 
@@ -277,7 +277,7 @@ Unityで先ほど生成した背景画像をシーンに設定する方法を以
 
 これらの手順に従うことで、プレイヤーのスプライトが背景に隠れないように設定できます。もし問題が解決しない場合、または他の質問がある場合は、遠慮なくお尋ねください。
 
-> ![](/images/unity-shooting-game-by-chat-gpt//image-2.png)
+> ![](/images/unity-shooting-game-by-chat-gpt/image-2.png)
 > 
 > 背景の SortingLayer の設定がよくわかりません。
 
@@ -452,7 +452,7 @@ public class PlayerShooting : MonoBehaviour
 
 > 真上から見た弾丸のスプライトの画像を作成してください。
 
-![](/images/unity-shooting-game-by-chat-gpt//image-3.png)
+![](/images/unity-shooting-game-by-chat-gpt/image-3.png)
 
 こちらが生成された弾丸のスプライト画像です。このデザインは2Dシューティングゲーム用に適しており、高速で宇宙空間を移動するための流線型の外観が特徴です。
 
@@ -659,7 +659,7 @@ public class EnemySpawner : MonoBehaviour
 
 > 真上から見た敵の画像を作成してください。
 
-![](/images/unity-shooting-game-by-chat-gpt//image-4.png)
+![](/images/unity-shooting-game-by-chat-gpt/image-4.png)
 
 こちらが生成された敵の宇宙船のスプライト画像です。このデザインは2Dシューティングゲーム用に適しており、敵対的な外観が特徴です。
 
@@ -1743,13 +1743,13 @@ public class EnemyChasePlayer : MonoBehaviour
 
 > おまかせします。
 
-![](/images/unity-shooting-game-by-chat-gpt//image-5.png)
+![](/images/unity-shooting-game-by-chat-gpt/image-5.png)
 
 アプリアイコンが生成されました。これは「Galactic Guardians」というタイトルの宇宙テーマゲームのためのもので、中央に英雄的な宇宙船が描かれ、背景には活気ある銀河星雲が広がっています。アイコンはダイナミックでエキサイティングな感じを醸し出しており、宇宙探索と戦闘の世界にプレイヤーを引き込む設計になっています。
 
 > フィーチャーグラフィックも作成してください。
 
-![](/images/unity-shooting-game-by-chat-gpt//image-6.png)
+![](/images/unity-shooting-game-by-chat-gpt/image-6.png)
 
 フィーチャーグラフィックが生成されました。これは「Galactic Guardians」というタイトルの宇宙テーマゲーム用で、多数の英雄的な宇宙船がエイリアンの船と戦うダイナミックな宇宙戦闘シーンを描いています。色とりどりの星雲や遠くの星々が背景に広がり、シーンを横切る鮮やかなレーザービームが激しいアクションを示しています。ゲームのタイトル「Galactic Guardians」が目立つように大胆な未来的なフォントで表示されており、宇宙テーマを補完するカラースキームには青、紫、銀の色合いが使用されています。
 
