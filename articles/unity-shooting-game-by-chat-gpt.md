@@ -20,7 +20,7 @@ Unity は初経験でしたが、ChatGPT の指示通りにやれば簡単にで
 Unity はすばらしいので、Web でもモバイルでも簡単にマルチプラットフォームに対応できました。
 今回は Web と Google Play Store に公開しています。
 
-- [Web 版](https://galacticguardians.k-taro56.com/ShootingGame2D/)
+- [Web 版](https://galacticguardians.k-taro56.com)
 - [Google Play Store](https://play.google.com/store/apps/details?id=com.ktaro56.GalacticGuardians)
 
 遊んでみるとわかるとは思いますが、ゲーム性はなく特におもしろくはありません。
