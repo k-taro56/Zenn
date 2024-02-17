@@ -110,9 +110,9 @@ jobs:
 GitHub のリポジトリの設定画面から、以下のシークレットを設定します。
 
 - `EXPORT_OPTIONS`: `ExportOptions.plist` の内容
-- `APPLE_API_KEY`: Apple API の秘密鍵
-- `APPLE_API_ISSUER_ID`: Apple API の発行者 ID
-- `APPLE_API_KEY_ID`: Apple API の秘密鍵 ID
+- `APPLE_API_KEY`: App Store Connect API の秘密鍵
+- `APPLE_API_ISSUER_ID`: App Store Connect API の Issuer ID
+- `APPLE_API_KEY_ID`: App Store Connect API の秘密鍵 ID
 - `APPLE_ID`: Apple ID
 - `APP_SPECIFIC_PASSWORD`: Apple ID のアプリ用パスワード
 
