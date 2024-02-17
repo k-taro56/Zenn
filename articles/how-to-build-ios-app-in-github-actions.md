@@ -117,6 +117,8 @@ GitHub のリポジトリの設定画面から、以下のシークレットを�
 - `APPLE_ID`: Apple ID
 - `APP_SPECIFIC_PASSWORD`: Apple ID のアプリ用パスワード
 
+### `ExportOptions.plist` の作成
+
 `EXPORT_OPTIONS` は、以下のような内容です。
 `YOUR_TEAM_ID` は、Apple Developer Program の [Membership](https://developer.apple.com/account/) から確認できます。
 
@@ -133,12 +135,21 @@ GitHub のリポジトリの設定画面から、以下のシークレットを�
 </plist>
 ```
 
-`APPLE_API_KEY` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵の内容です。
+### App Store Connect API のキーの作成
+
+App Store Connect API のキーは、[App Store Connect API](https://appstoreconnect.apple.com/access/integrations/api) から作成できます。
+名前は任意ですが、`App Manager` または `Admin` のアクセスが必要です。
+
+`APPLE_API_KEY` は、キーの内容です。
+一度しかダウンロードできないため、注意してください。
 Base64 エンコードしてシークレットに設定します。
 
-`APPLE_API_ISSUER_ID` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵の発行者 ID です。
+`APPLE_API_ISSUER_ID` は、キーの発行者 ID です。
+すべてのキーに共通です。
 
-`APPLE_API_KEY_ID` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵 ID です。
+`APPLE_API_KEY_ID` は、キー ID です。
+
+### アプリ用パスワードの設定
 
 `APPLE_ID` は、Apple ID（メールアドレス）です。
 Apple Developer Program の登録に使用した Apple ID を設定してください。
