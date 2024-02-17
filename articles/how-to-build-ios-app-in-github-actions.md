@@ -138,7 +138,7 @@ Base64 エンコードしてシークレットに設定します。
 
 `APPLE_API_KEY_ID` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵 ID です。
 
-`APPLE_ID` は、Apple ID です。
+`APPLE_ID` は、Apple ID（メールアドレス）です。
 Apple Developer Program の登録に使用した Apple ID を設定してください。
 
 `APP_SPECIFIC_PASSWORD` は、Apple ID の [アプリ用パスワード](https://appleid.apple.com/account/manage) から作成したアプリ用パスワードです。
