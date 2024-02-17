@@ -35,7 +35,7 @@ App Store Connect にアップロードするため、Apple Developer Program �
 
 リポジトリーのルートディレクトリーに `.github/workflows/build.yml` を作成し、以下の内容を記述します。
 
-```yaml
+```yaml:build.yml
 name: Build
 
 on:
