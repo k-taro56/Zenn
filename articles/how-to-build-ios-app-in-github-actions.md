@@ -113,7 +113,7 @@ GitHub のリポジトリの設定画面から、以下のシークレットを�
 - `APPLE_API_ISSUER_ID`: Apple API の発行者 ID
 - `APPLE_API_KEY_ID`: Apple API の秘密鍵 ID
 - `APPLE_ID`: Apple ID
-- `APP_SPECIFIC_PASSWORD`: App Store Connect のアプリ固有のパスワード
+- `APP_SPECIFIC_PASSWORD`: Apple ID のアプリ用パスワード
 
 `EXPORT_OPTIONS` は、以下のような内容です。
 `YOUR_TEAM_ID` は、Apple Developer Program の [Membership](https://developer.apple.com/account/) から確認できます。
