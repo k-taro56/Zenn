@@ -147,7 +147,7 @@ Apple Developer Program の登録に使用した Apple ID を設定してくだ�
 
 これで準備完了です。
 
-リポジトリーにコミットすると、GitHub Actions が自動的に実行されます。
+GitHub に push すると、GitHub Actions が自動的に実行されます。
 ビルドが成功すると、App Store Connect にアプリがアップロードされます。
 App Store Connect から審査不要の内部テスト用リリースを作成することができます。
 お手持ちの iPhone でテストしてみてください！
