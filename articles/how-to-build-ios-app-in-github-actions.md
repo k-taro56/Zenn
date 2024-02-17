@@ -165,7 +165,8 @@ App Store Connect から審査不要の内部テスト用リリースを作成�
 - `APPLE_API_KEY` は Base64 エンコードされているか。
 - App Store Connect API のキーの権限は正しいか。
 - app.ipa ディレクトリーに `MainApp.ipa` が作成されているか。
-プロジェクトによってはほかの名前になることがあります。`ls -l app.ipa` で確認できます。
+プロジェクトによってはほかの名前になることがあります。
+`ls -l app.ipa` で確認できます。
 
 ## おわりに
 
