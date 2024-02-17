@@ -131,12 +131,12 @@ GitHub のリポジトリの設定画面から、以下のシークレットを�
 </plist>
 ```
 
-`APPLE_API_KEY` は、Apple Developer Program の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵の内容です。
+`APPLE_API_KEY` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵の内容です。
 Base64 エンコードしてシークレットに設定します。
 
-`APPLE_API_ISSUER_ID` は、Apple Developer Program の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵の発行者 ID です。
+`APPLE_API_ISSUER_ID` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵の発行者 ID です。
 
-`APPLE_API_KEY_ID` は、Apple Developer Program の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵 ID です。
+`APPLE_API_KEY_ID` は、App Store Connect の [統合](https://appstoreconnect.apple.com/access/integrations/api) から作成した秘密鍵 ID です。
 
 `APPLE_ID` は、Apple ID です。
 Apple Developer Program の登録に使用した Apple ID を設定してください。
