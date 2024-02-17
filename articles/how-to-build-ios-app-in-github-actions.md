@@ -102,7 +102,8 @@ jobs:
 - Xcode プロジェクトのパスは `MyApp/MyApp.xcodeproj`、スキーム名は `MainApp` としています。適宜変更してください。
 - Xcode のプロジェクトで自動署名を有効にしてください。
 - `xcodebuild build`、`xcodebuild archive` するときには、署名を無効にするために `CODE_SIGNING_ALLOWED=NO` を指定しています。
-- `-allowProvisioningUpdates` を指定しているため、プロビジョニングファイルを直接必要としていないので、プロビジョニングファイルを 1 年ごとに更新する必要がありません。
+- `-allowProvisioningUpdates` を指定しているので、プロビジョニングファイルを直接必要としません。
+また、プロビジョニングファイルを 1 年ごとに更新する必要がありません。
 
 ## 3. シークレットの設定
 
