@@ -127,7 +127,7 @@ GitHub のリポジトリの設定画面から、以下のシークレットを�
     <key>method</key>
     <string>app-store</string>
     <key>teamID</key>
-    <string>YOUR_TEAM_ID
+    <string>YOUR_TEAM_ID</string>
 </dict>
 </plist>
 ```
