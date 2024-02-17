@@ -154,6 +154,19 @@ GitHub に push すると、GitHub Actions が自動的に実行されます。
 App Store Connect から審査不要の内部テスト用リリースを作成することができます。
 お手持ちの iPhone でテストしてみてください！
 
+## うまくいかないときは
+
+ワークフローが失敗する場合は、以下の点を確認してください。
+
+- Xcode プロジェクトのパスやスキーム名は正しいか。
+`xcodebuild -list -project MyApp/MyApp.xcodeproj` でスキーム名を確認できます。
+- Xcode プロジェクトで自動署名は有効か。
+- シークレットはすべて設定されているか。
+- `APPLE_API_KEY` は Base64 エンコードされているか。
+- App Store Connect API のキーの権限は正しいか。
+- app.ipa ディレクトリーに `MainApp.ipa` が作成されているか。
+プロジェクトによってはほかの名前になることがあります。`ls -l app.ipa` で確認できます。
+
 ## おわりに
 
 この記事では、GitHub Actions を使って Mac を持っていなくても iOS アプリをビルドする方法を紹介しました。
