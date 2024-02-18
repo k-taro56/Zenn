@@ -168,6 +168,7 @@ base64 -i AuthKey_YOUR_ISSUER_ID.p8
 Apple Developer Program の登録に使用した Apple ID を設定してください。
 
 `APP_SPECIFIC_PASSWORD` は、Apple ID の [アプリ用パスワード](https://appleid.apple.com/account/manage) から作成したアプリ用パスワードです。
+より詳しい設定方法は、[Apple のドキュメント](https://support.apple.com/ja-jp/102654) を参照してください。
 
 ## 4. 実行
 
