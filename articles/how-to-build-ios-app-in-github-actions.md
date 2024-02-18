@@ -3,7 +3,7 @@ title: "【Mac 実機不要】GitHub Actions で iOS アプリをビルドする
 emoji: "🦔"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["githubactions", "ios", "xcode", "mac"]
-published: false
+published: true
 ---
 
 ## はじめに
