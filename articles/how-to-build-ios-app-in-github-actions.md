@@ -121,7 +121,7 @@ GitHub のリポジトリーの設定画面から、Repository secrets に以下
 ### `ExportOptions.plist` の作成
 
 `EXPORT_OPTIONS` は、以下のような内容です。
-`YOUR_TEAM_ID` は、Apple Developer Program の [Membership](https://developer.apple.com/account/) から確認できます。
+`YOUR_TEAM_ID` は、Apple Developer Program の [Membership](https://developer.apple.com/account#MembershipDetailsCard) から確認できます。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,7 +144,7 @@ App Store Connect API のキーは、[App Store Connect API](https://appstorecon
 
 `APPLE_API_KEY_BASE64` は、キーの内容です。
 一度しかダウンロードできないため、注意してください。
-Base64 エンコードしてシークレットに設定します。
+Base64 エンコードしてシークレットに設定してください。
 
 #### Base64 エンコードの方法
 
