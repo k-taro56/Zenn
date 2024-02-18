@@ -108,7 +108,8 @@ jobs:
 
 ## 3. シークレットの設定
 
-GitHub のリポジトリの設定画面から、以下のシークレットを設定します。
+GitHub のリポジトリーの設定画面から、Repository secrets に以下のシークレットを設定します。
+詳しい設定方法は、[GitHub のドキュメント](https://docs.github.com/ja/actions/security-guides/using-secrets-in-github-actions) を参照してください。
 
 - `EXPORT_OPTIONS`: `ExportOptions.plist` の内容
 - `APPLE_API_KEY_BASE64`: App Store Connect API のキーの内容を Base64 エンコードしたもの
