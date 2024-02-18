@@ -139,7 +139,7 @@ GitHub のリポジトリーの設定画面から、Repository secrets に以下
 ### App Store Connect API のキーの作成
 
 App Store Connect API のキーは、[App Store Connect API](https://appstoreconnect.apple.com/access/integrations/api) から作成できます。
-名前は任意ですが、`App Manager` または `Admin` のアクセスが必要です。
+名前は任意ですが、`Admin` のアクセスが必要です。
 
 `APPLE_API_KEY_BASE64` は、キーの内容です。
 一度しかダウンロードできないため、注意してください。
