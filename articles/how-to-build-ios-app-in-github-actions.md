@@ -74,7 +74,7 @@ jobs:
       - name: Create Private Key
         run: |
           mkdir private_keys
-          echo -n '${{ secrets.APPLE_API_KEY }}' | base64 --decode > ./private_keys/AuthKey_${{ secrets.APPLE_API_ISSUER_ID }}.p8
+          echo -n '${{ secrets.APPLE_API_KEY_BASE64 }}' | base64 --decode > ./private_keys/AuthKey_${{ secrets.APPLE_API_ISSUER_ID }}.p8
 
       - name: Export IPA
         run: |   
@@ -111,7 +111,7 @@ jobs:
 GitHub のリポジトリの設定画面から、以下のシークレットを設定します。
 
 - `EXPORT_OPTIONS`: `ExportOptions.plist` の内容
-- `APPLE_API_KEY`: App Store Connect API の秘密鍵
+- `APPLE_API_KEY_BASE64`: App Store Connect API の秘密鍵
 - `APPLE_API_ISSUER_ID`: App Store Connect API の Issuer ID
 - `APPLE_API_KEY_ID`: App Store Connect API の秘密鍵 ID
 - `APPLE_ID`: Apple ID
@@ -140,7 +140,7 @@ GitHub のリポジトリの設定画面から、以下のシークレットを�
 App Store Connect API のキーは、[App Store Connect API](https://appstoreconnect.apple.com/access/integrations/api) から作成できます。
 名前は任意ですが、`App Manager` または `Admin` のアクセスが必要です。
 
-`APPLE_API_KEY` は、キーの内容です。
+`APPLE_API_KEY_BASE64` は、キーの内容です。
 一度しかダウンロードできないため、注意してください。
 Base64 エンコードしてシークレットに設定します。
 
@@ -185,7 +185,7 @@ App Store Connect から審査不要の内部テスト用リリースを作成�
 `xcodebuild -list -project MyApp/MyApp.xcodeproj` でスキーム名を確認できます。
 - Xcode プロジェクトで自動署名は有効か。
 - シークレットはすべて設定されているか。
-- `APPLE_API_KEY` は Base64 エンコードされているか。
+- `APPLE_API_KEY_BASE64` は Base64 エンコードされているか。
 - App Store Connect API のキーの権限は正しいか。
 - app.ipa ディレクトリーに `MainApp.ipa` が作成されているか。
 プロジェクトによってはほかの名前になることがあります。
