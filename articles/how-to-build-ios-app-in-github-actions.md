@@ -103,7 +103,7 @@ jobs:
 - Xcode のプロジェクトで自動署名を有効にしてください。
 - `xcodebuild build`、`xcodebuild archive` するときには、署名を無効にするために `CODE_SIGNING_ALLOWED=NO` を指定しています。
 - Private Key のパスは内部で暗黙的に参照されるため、変更しないでください。
-- `-allowProvisioningUpdates` を指定しているので、プロビジョニングファイルを直接必要としません。
+- `-allowProvisioningUpdates` を指定しているので、プロビジョニングファイルを必要としません。
 また、プロビジョニングファイルを 1 年ごとに更新する必要がありません。
 
 ## 3. シークレットの設定
