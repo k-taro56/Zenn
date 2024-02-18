@@ -156,7 +156,7 @@ Base64 エンコードしてシークレットに設定します。
 
 ```sh:Linux / macOS
 base64 -i AuthKey_YOUR_ISSUER_ID.p8
-``
+```
 
 `APPLE_API_ISSUER_ID` は、キーの発行者 ID です。
 すべてのキーに共通です。
