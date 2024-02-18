@@ -144,6 +144,18 @@ App Store Connect API のキーは、[App Store Connect API](https://appstorecon
 一度しかダウンロードできないため、注意してください。
 Base64 エンコードしてシークレットに設定します。
 
+#### Base64 エンコードの方法
+
+以下のコマンドで Base64 エンコードできます。
+
+```ps:Windows (PowerShell)
+[Convert]::ToBase64String([System.IO.File]::ReadAllBytes("AuthKey_YOUR_ISSUER_ID.p8"))
+```
+
+```sh:Linux / macOS
+base64 -i AuthKey_YOUR_ISSUER_ID.p8
+``
+
 `APPLE_API_ISSUER_ID` は、キーの発行者 ID です。
 すべてのキーに共通です。
 
