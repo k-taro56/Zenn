@@ -3,7 +3,7 @@ title: "【Mac 実機不要】GitHub Actions で iOS アプリをビルドする
 emoji: "🦔"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["githubactions", "ios", "xcode", "mac"]
-published: false
+published: true
 ---
 
 ## はじめに
@@ -162,6 +162,7 @@ base64 -i AuthKey_YOUR_ISSUER_ID.p8
 すべてのキーに共通です。
 
 `APPLE_API_KEY_ID` は、キー ID です。
+ダウンロードしたキーのファイル名の `AuthKey_` の後に続く文字列でもあります。
 
 ### アプリ用パスワードの設定
 
