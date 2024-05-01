@@ -50,14 +50,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build Project
-        run: |
-          xcodebuild build -project MyApp/MyApp.xcodeproj \
-                           -scheme MainApp \
-                           -sdk iphoneos \
-                           -configuration Release \
-                           CODE_SIGNING_ALLOWED=NO \
-
       - name: Archive Project
         run: |                        
           xcodebuild archive -project MyApp/MyApp.xcodeproj \
