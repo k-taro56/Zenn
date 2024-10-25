@@ -9,7 +9,7 @@ published: true
 ## はじめに
 
 先日リリースされた Next.js 15 では ESLint 9 に[対応しました](https://nextjs.org/blog/next-15#eslint-9-support)。
-互換性はまだ維持されているため、従来のままの設定ファイルでも動作しますが、せっかくなので Flat config を使ってみましょう。
+互換性はまだ維持されているため、従来の設定ファイルのままでも動作しますが、せっかくなので Flat config を使ってみましょう。
 （`create-next-app` で作成したプロジェクトでは、依然として ESLint 8 のままです。）
 
 ## インストール
