@@ -12,6 +12,9 @@ published: true
 互換性はまだ維持されているため、従来の設定ファイルのままでも動作しますが、せっかくなので Flat config を使ってみましょう。
 （`create-next-app` で作成したプロジェクトでは、依然として ESLint 8 のままです。）
 
+なお、`next/core-web-vitals`、`next/typescript` は ESLint 9 未対応のため、`fixupConfigRules` を使っています。
+そのため内部的には ESLint 8 が使われています。
+
 ## インストール
 
 以下の追加の依存関係が必要です。
