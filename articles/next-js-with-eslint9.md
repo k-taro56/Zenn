@@ -4,6 +4,7 @@ emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["nextjs", "eslint", "typescript"]
 published: true
+publication_name: "romanark"
 ---
 
 ## はじめに
