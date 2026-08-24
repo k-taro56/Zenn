@@ -566,3 +566,7 @@ Arkor では、マーケティングページの認証ボタン、テナント�
 - [Next.js: `unstable_rethrow`](https://nextjs.org/docs/app/api-reference/functions/unstable_rethrow)
 - [Next.js 16.3](https://nextjs.org/blog/next-16-3)
 - [Next.js 16.3: Instant Navigations（背景資料）](https://nextjs.org/blog/next-16-3-instant-navigations)
+
+---
+
+Arkor の取り組みに興味を持っていただけたら、[GitHub リポジトリー](https://github.com/arkorlab/arkor)にスターをいただけるとうれしいです。
