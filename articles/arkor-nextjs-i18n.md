@@ -3,7 +3,7 @@ title: "ライブラリーを使わずに Next.js App Router で多言語対応�
 emoji: "🌐"
 type: "tech"
 topics: ["nextjs", "i18n", "typescript", "react", "zod", "arkor"]
-published: false
+published: true
 publication_name: "romanark"
 ---
 
