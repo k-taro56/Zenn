@@ -2,8 +2,8 @@
 title: "Next.js 16.3 の PPR で、認証付き画面を待たせない — Arkor の実践"
 emoji: "⚡"
 type: "tech"
-topics: ["nextjs", "react", "typescript", "playwright", "webperformance", "arkor"]
-published: false
+topics: ["nextjs", "react", "typescript", "playwright", "arkor"]
+published: true
 publication_name: "romanark"
 ---
 
